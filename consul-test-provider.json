@@ -1,0 +1,18 @@
+{
+    "service": {
+		"token": "{{ consul-test-provider-service-token }}",
+		"name": "consul-test-provider",
+		"tags": ["test","provider"],
+		"port": 5001,
+		"connect": {
+			"sidecar_service": {}
+		},
+		"check": {
+			"id": "consul-test-provider",
+			"name": "consul-test-provider tcp port check",
+			"tcp": "127.0.0.1:5001",
+			"interval": "15s",
+			"timeout": "3s"
+		}
+    }
+}
